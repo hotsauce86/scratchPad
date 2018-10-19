@@ -12,6 +12,7 @@ public class thePad {
         String s2 = "sdfbeljkdcfj";
 
         MatchTwoString(s1,s2);
+        stringMap(s1,s2);
     }
 
     public static String countSpace(String x){
@@ -54,5 +55,16 @@ public class thePad {
             System.out.println("match is false");
         }
     }
+
+    public static void stringMap (String s1, String s2){
+        System.out.println(s1.compareTo(s2));
+        System.out.println(s1.chars());
+        System.out.println(s1.codePoints());
+        System.out.println(s1.concat(s2));
+        System.out.println(s1.replaceFirst(" ", s2));
+        System.out.println(s1.toUpperCase());
+        System.out.println(s1.matches("a"));
+    }
+
 
 }
