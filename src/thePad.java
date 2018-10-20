@@ -87,14 +87,14 @@ public class thePad {
         List<Integer> integerList = new LinkedList<>();
         for(int i=0; i <10; i++){
             //make random an int and output froma a range of 40
-            integerList.add((int)(Math.random()*40));
+            integerList.add((int)(Math.random()*4));
             System.out.println(integerList.get(i));
         }
 
     }
 
     public static void islandMaker(){
-        int[][] grid = new int[5][5];
+        int[][] grid = new int[10][10];
 
         //y axis
         for(int i =0; i<grid.length; i++){
@@ -106,16 +106,19 @@ public class thePad {
             System.out.println("");
         }
 
-        System.out.println("");System.out.println("");
+        System.out.println("");System.out.println("seed");
         seedIsland(grid);
-
         printOcean(grid);
-        System.out.println("");System.out.println("");
 
+        System.out.println("");System.out.println("growth uno");
         growIsland(grid);
         printOcean(grid);
-        System.out.println("");System.out.println("");
 
+        System.out.println("");System.out.println("growth dos");
+        growIsland(grid);
+        printOcean(grid);
+
+        System.out.println("");System.out.println("growth tres");
         growIsland(grid);
         printOcean(grid);
 
@@ -129,10 +132,13 @@ public class thePad {
             //x axis
             for(int j=0; j< someOcean.length; j++){
                 int x = (int)(Math.random()*50);
-
-                if(x==4){
-                    someOcean[j][i] = 1;
+                if ((j > 0 && j < someOcean.length - 1) && (i > 0 && i < someOcean.length - 1)) {
+                    if(x==4){
+                        someOcean[j][i] = 1;
+                    }
                 }
+
+
             }
         }
         return someOcean;
@@ -176,16 +182,16 @@ public class thePad {
 
         //for each layer in the z axis
         for(int k=0; k<highestPoint;k++) {
-            //the x axis
+            //the y axis
             for (int i = 0; i < someOcean.length; i++) {
-                //the y axis
+                //the x axis
                 for (int j = 0; j < someOcean.length; j++) {
 
                     //finding the hight at this point
                     if (someOcean[j][i] == highestPoint-k) {
                         //we check the immediate cardinal directions
                         if ((j > 0 && j < someOcean.length - 1) && (i > 0 && i < someOcean.length - 1)) {
-                            int secondWave = (int)(Math.random()*2);
+                            int secondWave = (int)(Math.random()*(2+k));
                             if(secondWave==1) {
                                 //North
                                 if (someOcean[j][i - 1] < someOcean[j][i]) {
@@ -209,11 +215,6 @@ public class thePad {
                 }
             }
         }
-
-
-
-
-
 
         return someOcean;
     }

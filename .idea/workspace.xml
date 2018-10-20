@@ -19,8 +19,8 @@
       <file leaf-file-name="thePad.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/thePad.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="188" column="47" lean-forward="true" selection-start-line="188" selection-start-column="47" selection-end-line="188" selection-end-column="47" />
+            <state relative-caret-position="765">
+              <caret line="143" column="25" lean-forward="true" selection-start-line="143" selection-start-column="25" selection-end-line="143" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,6 +59,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -71,7 +72,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -191,6 +191,16 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/thePad.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3587">
+          <caret line="211" lean-forward="true" selection-start-line="211" selection-end-line="211" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/thePad.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1258">
           <caret line="74" column="30" lean-forward="true" selection-start-line="74" selection-start-column="30" selection-end-line="74" selection-end-column="30" />
           <folding>
@@ -215,8 +225,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/thePad.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="188" column="47" lean-forward="true" selection-start-line="188" selection-start-column="47" selection-end-line="188" selection-end-column="47" />
+        <state relative-caret-position="765">
+          <caret line="143" column="25" lean-forward="true" selection-start-line="143" selection-start-column="25" selection-end-line="143" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
