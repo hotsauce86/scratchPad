@@ -1,6 +1,7 @@
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 public class thePad {
 
@@ -18,12 +19,67 @@ public class thePad {
         stringMap(s1,s2);
 //////////////////////////////////////////////////
 
-       intMap(27);
+        Scanner in = new Scanner(System.in);
 
-       islandMaker();
+        int[][] grid = new int[10][10];
+
+         System.out.println("Select your option:");
+         System.out.println("'1': \tcreate new island, \t'2': \tgrow island \t '3': \tseed new isalnd \t'0': \t end program");
+        int choice = in.nextInt();
+         while(choice !=0){
+             switch (choice){
+                 case(1):
+                     islandMaker(grid);
+                     printOcean(grid);
+                     break;
+
+                 case(2):
+                     growIsland(grid);
+                     printOcean(grid);
+                     break;
+                 case(3):
+                     seedIsland(grid);
+                     printOcean(grid);
+                     break;
+
+
+             }
+             System.out.println("");
+             System.out.println("Select your option:");
+             System.out.println("'1': \tcreate new island, \t'2': \tgrow island \t '0': \t end program");
+             choice = in.nextInt();
+         }
+
+
+
+
+
+       islandMaker(grid);
+
+        System.out.println("");System.out.println("growth uno");
+        growIsland(grid);
+        printOcean(grid);
+
+        System.out.println("");System.out.println("growth dos");
+        growIsland(grid);
+        printOcean(grid);
+
+        System.out.println("");System.out.println("growth tres");
+        growIsland(grid);
+        printOcean(grid);
 
     }
 
+
+
+
+
+
+
+
+    /*
+    RANDOM METHOD GENERATOR
+     */
 
 
     public static String countSpace(String x){
@@ -93,8 +149,23 @@ public class thePad {
 
     }
 
-    public static void islandMaker(){
-        int[][] grid = new int[10][10];
+
+
+
+
+
+
+
+
+
+
+    /*//////////////////////////////////////////////////////////////////////////////////
+    ISLAND GENERATOR METHODS
+     *//////////////////////////////////////////////////////////////////////////////////
+
+    public static void islandMaker(int[][] someGrid){
+        //int[][] grid = new int[10][10];
+        int[][] grid = someGrid;
 
         //y axis
         for(int i =0; i<grid.length; i++){
@@ -108,8 +179,9 @@ public class thePad {
 
         System.out.println("");System.out.println("seed");
         seedIsland(grid);
-        printOcean(grid);
+     //   printOcean(grid);
 
+        /*
         System.out.println("");System.out.println("growth uno");
         growIsland(grid);
         printOcean(grid);
@@ -121,7 +193,7 @@ public class thePad {
         System.out.println("");System.out.println("growth tres");
         growIsland(grid);
         printOcean(grid);
-
+        */
 
 
     }
@@ -147,10 +219,17 @@ public class thePad {
     public static void printOcean(int[][] someOcean){
         for(int i =0; i<someOcean.length; i++){
             //x axis
+            /*
             for(int j=0; j< someOcean.length; j++){
                 System.out.print(" "+someOcean[j][i]);
             }
             System.out.println("");
+            */
+
+            for(int j=0; j< someOcean.length; j++){
+                System.out.print("  "+String.format("%02d",someOcean[j][i]));
+            }
+            System.out.println("");System.out.println("");
         }
     }
 
@@ -208,6 +287,24 @@ public class thePad {
                                 //West
                                 if (someOcean[j - 1][i] < someOcean[j][i]) {
                                     someOcean[j - 1][i]++;
+                                }
+                            }
+                            if(secondWave==2) {
+                                //North
+                                if (someOcean[j][i - 1] < someOcean[j][i]) {
+                                    someOcean[j][i - 1]--;
+                                }
+                                //South
+                                if (someOcean[j][i + 1] < someOcean[j][i]) {
+                                    someOcean[j][i + 1]--;
+                                }
+                                //East
+                                if (someOcean[j + 1][i] < someOcean[j][i]) {
+                                    someOcean[j + 1][i]--;
+                                }
+                                //West
+                                if (someOcean[j - 1][i] < someOcean[j][i]) {
+                                    someOcean[j - 1][i]--;
                                 }
                             }
                         }
