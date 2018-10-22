@@ -53,7 +53,7 @@ public class thePad {
              }
              System.out.println("");
              System.out.println("Select your option:");
-             System.out.println("'1': \tcreate new island, \t'2': \tgrow island \t '3': \tseed new isalnd \t'4': \tsmall bomb \t'0': \t end program");
+             System.out.println("'1': \tcreate new island, \t'2': \tgrow island \t '3': \tseed new isalnd \t'4': \tsmall bomb '5': \tbig bomb \t'0': \t end program");
              choice = in.nextInt();
          }
 
