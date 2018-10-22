@@ -24,7 +24,7 @@ public class thePad {
         int[][] grid = new int[10][10];
 
          System.out.println("Select your option:");
-         System.out.println("'1': \tcreate new island, \t'2': \tgrow island \t '3': \tseed new isalnd \t'0': \t end program");
+         System.out.println("'1': \tcreate new island, \t'2': \tgrow island \t '3': \tseed new isalnd \t'4': \tsmall bomb '5': \tbig bomb \t'0': \t end program");
         int choice = in.nextInt();
          while(choice !=0){
              switch (choice){
@@ -41,12 +41,19 @@ public class thePad {
                      seedIsland(grid);
                      printOcean(grid);
                      break;
-
+                 case(4):
+                     System.out.println("select x, then y");
+                     smallBomb(grid,in.nextInt(),in.nextInt());
+                     printOcean(grid);
+                 case(5):
+                     System.out.println("select x, then y");
+                     smallBomb(grid,in.nextInt(),in.nextInt());
+                     printOcean(grid);
 
              }
              System.out.println("");
              System.out.println("Select your option:");
-             System.out.println("'1': \tcreate new island, \t'2': \tgrow island \t '0': \t end program");
+             System.out.println("'1': \tcreate new island, \t'2': \tgrow island \t '3': \tseed new isalnd \t'4': \tsmall bomb \t'0': \t end program");
              choice = in.nextInt();
          }
 
@@ -289,7 +296,8 @@ public class thePad {
                                     someOcean[j - 1][i]++;
                                 }
                             }
-                            if(secondWave==2) {
+                            if(secondWave==4) {
+
                                 //North
                                 if (someOcean[j][i - 1] < someOcean[j][i]) {
                                     someOcean[j][i - 1]--;
@@ -311,6 +319,69 @@ public class thePad {
                     }
                 }
             }
+        }
+
+        return someOcean;
+    }
+
+    public static int[][] smallBomb(int[][] someOcean, int x, int y ){
+
+        try{
+
+            //Center
+                someOcean[x][y]-= 2;
+
+            //North
+                 someOcean[x][y - 1]--;
+
+            //South
+
+                someOcean[x][y + 1]--;
+
+            //East
+
+                someOcean[x + 1][y]--;
+
+            //West
+
+                someOcean[x - 1][y]--;
+
+        }
+        catch (ArrayIndexOutOfBoundsException e){
+            e.printStackTrace();
+            System.out.println(e);
+        }
+
+        return someOcean;
+    }
+
+    public static int[][] bigBomb(int[][] someOcean, int x, int y ){
+
+        try{
+
+            //Center
+            someOcean[x][y]-= 4;
+            //North
+            someOcean[x][y - 1]-=2;
+            //NE
+            someOcean[x + 1][y - 1]-= 2;
+            //East
+            someOcean[x + 1][y]-=2;
+            //SE
+            someOcean[x + 1][y+1]-=2;
+            //South
+            someOcean[x][y + 1]-=2;
+            //SW
+            someOcean[x - 1][y + 1]-=2;
+            //West
+            someOcean[x - 1][y]-=2;
+            //NW
+            someOcean[x - 1][y - 1]-=2;
+
+        }
+        catch (ArrayIndexOutOfBoundsException e){
+            e.printStackTrace();
+            System.out.println(e);
         }
 
         return someOcean;
