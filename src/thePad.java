@@ -47,8 +47,13 @@ public class thePad {
                      printOcean(grid);
                  case(5):
                      System.out.println("select x, then y");
-                     smallBomb(grid,in.nextInt(),in.nextInt());
+                     bigBomb(grid,in.nextInt(),in.nextInt());
                      printOcean(grid);
+                 case(6):
+                     System.out.println("select x, then y");
+                     bigBomb(grid,in.nextInt(),in.nextInt());
+                     printOcean(grid);
+
 
              }
              System.out.println("");
